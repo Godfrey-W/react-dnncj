@@ -1,0 +1,3 @@
+export const GET_WRITER_LIST = 'writer/GET_WRITER_LIST'
+export const GET_LOADING_STATUS = 'writer/GET_LOADING_STATUS'
+export const GET_WRITER_LIST_PAGE = 'writer/GET_WRITER_LIST_PAGE'

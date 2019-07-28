@@ -1,0 +1,69 @@
+@import "../../assets/scss/var_mixin_func";
+.writerInfo {
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 12px;
+  color: #999;
+  background-color: #fff;
+}
+.writerInfoContent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.writerCover {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.writerInfoBody {
+  flex: 1;
+}
+.nickname {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    fill: $--color-primary;
+  }
+}
+.signature {
+  @include multi-Line-omit;
+}
+.writerInfoRow {
+  display: flex;
+  align-items: center;
+}
+.writerInfoRowItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+  &:first-child {
+    margin-right: 5px;
+  }
+  &:last-child {
+    margin-left: 5px;
+  }
+  svg {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    fill: $--color-primary;
+  }
+  span {
+    flex: 1;
+  }
+}

@@ -1,0 +1,66 @@
+$--color-primary: #1f77dd;
+
+//单行超出省略号
+@mixin ellipsis {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//多行超出省略号
+@mixin multi-Line-omit($line: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  word-break:break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+// 边框伪类
+@mixin hairline-pseudo-class($dir, $color) {
+  content: '';
+  position: absolute;
+  #{$dir}: 0;
+  transform-origin: $dir;
+  border-#{$dir}: 1PX solid $color;
+}
+
+// 半线
+@mixin hairline($dir: bottom, $color: #d2d2d2) {
+  @if ($dir == left) {
+    &::before {
+      @include hairline-pseudo-class($dir, $color);
+      top: 0;
+      bottom: 0;
+      width: 0;
+      transform: scaleX(.5);
+    }
+  } @else if ($dir == top) {
+    &::before {
+      @include hairline-pseudo-class($dir, $color);
+      left: 0;
+      right: 0;
+      height: 0;
+      transform: scaleY(.5);
+    }
+  } @else if ($dir == right) {
+    &::after {
+      @include hairline-pseudo-class($dir, $color);
+      top: 0;
+      bottom: 0;
+      width: 0;
+      transform: scaleX(.5);
+    }
+  } @else if ($dir == bottom) {
+    &::after {
+      @include hairline-pseudo-class($dir, $color);
+      left: 0;
+      right: 0;
+      height: 0;
+      transform: scaleY(.5);
+    }
+  }
+}

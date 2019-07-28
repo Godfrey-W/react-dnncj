@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import loadable from 'util/loadable'
+
+// import Home from './pages/home'
+const Home = loadable(() => import('pages/tabbar/home'))
+const Writer = loadable(() => import('pages/tabbar/writer'))
+const Article = loadable(() => import('pages/article'))
+const WriterDetails = loadable(() => import('pages/writer'))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Route path="/" exact component={Home} />
+      <Route path="/writer" component={Writer} />
+      <Route path="/article/:articleId" component={Article} />
+      <Route path="/writerinfo/:writerId" component={WriterDetails} />
+    </Router>
+  )
 }
 
-export default App;
+export default App

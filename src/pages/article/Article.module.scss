@@ -1,0 +1,67 @@
+@import "../../assets/scss/var_mixin_func";
+.articleWrapper {
+  position: relative;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 12px;
+  background-color: #fff;
+  @include hairline(top, #d2d2d2);
+}
+.articleTitle {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+  word-break: break-all;
+}
+.articleRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #999;
+  span {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+.articleLabel {
+  padding: 5px 0;
+  color: #1f77dd;
+}
+.articleContent {
+  position: relative;
+  padding: 15px 0;
+  overflow: hidden;
+  @include hairline(top, #d2d2d2);
+  * {
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+.articlePagination {
+  display: flex;
+  align-items: center;
+}
+.articlePrevPage, .articleNextPage {
+  flex: 1;
+  display: flex;
+  align-content: center;
+}
+.articlePrevPage {
+  margin-right: 10px;
+}
+.articleNextPage {
+  margin-left: 10px;
+}
+.articleLink {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e75d2;
+  border-color: #3e75d2;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 22px;
+}

@@ -1,0 +1,85 @@
+.tabbarWrapper {
+  padding-bottom: 50px;
+  height: 0;
+}
+.tabbarNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 -2px 2px rgba(31, 119, 221, .6);
+  a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 11px;
+    color: #666;
+    &.tabbarNavLinkActive {
+      color: #1f77dd;
+    }
+    &:nth-of-type(1) {
+      .tabbarIcon {
+        background-image: url('./news.png');
+      }
+      &.tabbarNavLinkActive {
+        .tabbarIcon {
+          background-image: url('./news_h.png');
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      .tabbarIcon {
+        background-image: url('./project.png');
+      }
+      &.tabbarNavLinkActive {
+        .tabbarIcon {
+          background-image: url('./project_h.png');
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .tabbarIcon {
+        background-image: url('./exchange.png');
+      }
+      &.tabbarNavLinkActive {
+        .tabbarIcon {
+          background-image: url('./exchange_h.png');
+        }
+      }
+    }
+    &:nth-of-type(4) {
+      .tabbarIcon {
+        background-image: url('./edit.png');
+      }
+      &.tabbarNavLinkActive {
+        .tabbarIcon {
+          background-image: url('./edit_h.png');
+        }
+      }
+    }
+    &:nth-of-type(5) {
+      .tabbarIcon {
+        background-image: url('./user.png');
+      }
+      &.tabbarNavLinkActive {
+        .tabbarIcon {
+          background-image: url('./user_h.png');
+        }
+      }
+    }
+  }
+}
+.tabbarIcon {
+  margin-bottom: 6px;
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
